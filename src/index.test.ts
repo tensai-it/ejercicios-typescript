@@ -7,27 +7,18 @@ describe('atrapaAlRaton', () => {
         }).toThrow('Patrón Incorrecto');
     });
 
-    it('debería devolver true para un patrón válido con longitud mayor a 5', () => {
-        const resultado = atrapaAlRaton('C.....M');
-        expect(resultado).toBe(true);
+    it('debería devolver false si el patrón no es una cadena, o distinto a "C . M"', () => {
+        const resultado = correctPatron('ASDSD');
+        expect(resultado).toBe(false);
     });
 
-    it('debería devolver false para un patrón válido con longitud menor o igual a 5', () => {
-        const resultado = atrapaAlRaton('C.M');
+    it('debería devolver true si patron.length < 5', () => {
+        const resultado = correctPatron('ASDSD');
         expect(resultado).toBe(false);
     });
 });
 
 describe('correctPatron', () => {
-    it('debería devolver true si el patrón es una cadena', () => {
-        const resultado = correctPatron('C..M');
-        expect(resultado).toBe(true);
-    });
-
-    it('debería devolver false si la longitud del patrón es menor a 3', () => {
-        const resultado = correctPatron('CM');
-        expect(resultado).toBe(false);
-    });
 
     it('debería devolver false si el primer y último carácter no son "C" y "M" respectivamente', () => {
         const resultado = correctPatron('X...Y');

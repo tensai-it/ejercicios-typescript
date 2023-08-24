@@ -4,13 +4,10 @@ exports.atrapaAlRaton = (patron) => {
     if (!exports.correctPatron(patron)) {
         throw new Error('Patrón Incorrecto');
     }
-    return patron.length > 5;
+    return patron.length < 5;
 };
 exports.correctPatron = (patron) => {
     if (typeof patron !== 'string') {
-        return false;
-    }
-    if (patron.length < 3) {
         return false;
     }
     if (patron[0] !== 'C' || patron[patron.length - 1] !== 'M') {

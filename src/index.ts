@@ -1,17 +1,16 @@
-export const atrapaAlRaton = (patron: string): boolean => {
+type Patron = string | "C" | "." | "M"
+
+
+export const atrapaAlRaton = (patron: Patron): boolean => {
     if (!correctPatron(patron)) {
         throw new Error('Patrón Incorrecto');
     }
 
-    return patron.length > 5;
+    return patron.length < 5;
 };
 
 export const correctPatron = (patron: string): boolean => {
     if (typeof patron !== 'string') {
-        return false;
-    }
-
-    if (patron.length < 3) {
         return false;
     }
 
