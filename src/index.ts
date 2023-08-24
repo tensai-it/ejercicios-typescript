@@ -1,4 +1,4 @@
-type Patron = string | "C" | "." | "M"
+type Patron = string
 
 
 export const atrapaAlRaton = (patron: Patron): boolean => {
