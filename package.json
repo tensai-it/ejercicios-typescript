@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "start": "node build/index.js",
-    "tsc": "tsc",
+    "compile": "tsc",
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
