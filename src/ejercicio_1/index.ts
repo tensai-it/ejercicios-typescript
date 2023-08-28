@@ -29,8 +29,6 @@ export const correctPatron = (patron: string): boolean => {
 };
 
 
-
-
 //Orden "c", ".", "m". de lo contrario falso 
 //Si no es un string devuelve falso
 // Si el primer caracter no es C devuelve falso
