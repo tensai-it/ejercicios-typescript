@@ -1,44 +1,22 @@
-export function convertASCIItoString(numero: number): string {
-    const cadena: string = numero.toString();
-    const result: string[] = [];
+export const ipToNum = (ip: string): number | null => {
+  const octeto = ip.split('.').map(octetoStr => {
+    const octetoInt = parseInt(octetoStr, 10);
+    return octetoInt.toString(2).padStart(8, '0');
+  });
 
-    for (let i = 0; i < cadena.length; i += 2) {
-        const code: number = Number(cadena.slice(i, i + 2)); //Lo cambia numero a los dos digitos
-
-        if (code >= 65 && code <= 90) {
-            result.push(String.fromCharCode(code));
-        } else if (code === 32) {
-            result.push(' '); // ESPACIO 
-        }
-    }
-
-    return result.join('');
-}
-
-
-export function stringToASCII(input: string): number {
-  const cadena: string = input.toUpperCase();
-  const ASCIIarray: number[] = [];
-
-  for (let i = 0; i < cadena.length; i++) {
-    const ASCIIcode = cadena.charCodeAt(i);
-
-    if ((ASCIIcode >= 65 && ASCIIcode <= 90) || ASCIIcode === 32) {
-      ASCIIarray.push(ASCIIcode);
-    }
+  if (!correctIP(octeto.map(octetoStr => parseInt(octetoStr, 2)))) {
+    return null; // La dirección IP no es válida
   }
 
-  return arrayToInt(ASCIIarray);
-}
+  const binarioCompleto = octeto.join('');
+  const numeroDecimal = parseInt(binarioCompleto, 2);
 
-function arrayToInt(arr: number[]): number {
-  const concatenatedString = arr.join(""); 
-  const integer = parseInt(concatenatedString);
-  return integer;
-}
+  return numeroDecimal;
+};
 
-
-
-
-
-
+export const correctIP = (octetos: number[]): boolean => {
+  if (octetos.length !== 4 || octetos.some(octeto => octeto < 0 || octeto > 255)) { 
+    return false;
+  }
+  return true;
+};

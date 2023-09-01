@@ -1,29 +1,25 @@
-// Importa las funciones que deseas probar
-import { convertASCIItoString, stringToASCII } from './index';
+import { ipToNum, correctIP } from './index'; // Asegúrate de que la ruta al archivo sea correcta
 
-// Pruebas para convertASCIItoString
-describe('convertASCIItoString', () => {
-  it('convierte números ASCII en cadena correctamente', () => {
-    expect(convertASCIItoString(656667)).toBe('ABC');
-    expect(convertASCIItoString(72797665)).toBe('HOLA');
-    expect(convertASCIItoString(767383)).toBe('LIS');
+describe('ipToNum', () => {
+  it('debería convertir una dirección IP válida a un número decimal', () => {
+    expect(ipToNum('192.168.1.1')).toBe(3232235777);
   });
 
-  it('maneja espacios correctamente', () => {
-    expect(convertASCIItoString(32)).toBe(' ');
+  it('debería retornar null para una dirección IP no válida', () => {
+    expect(ipToNum('256.H.0.1')).toBeNull();
   });
 });
 
-// Pruebas para stringToASCII
-describe('stringToASCII', () => {
-  it('convierte cadena en números ASCII correctamente', () => {
-    expect(stringToASCII('ABC')).toEqual(656667);
-    expect(stringToASCII(' LIS ')).toEqual(3276738332);
-    expect(stringToASCII('HOLA')).toEqual(72797665);
+describe('correctIP', () => {
+  it('debería retornar true para una dirección IP válida', () => {
+    expect(correctIP([192, 168, 1, 1])).toBe(true);
   });
 
-  it('convierte a mayúsculas antes de convertir a ASCII', () => {
-    expect(stringToASCII('abc')).toEqual(656667);
+  it('debería retornar false para una dirección IP con octetos fuera de rango', () => {
+    expect(correctIP([192, 168, 256, 1])).toBe(false);
   });
 
+  it('debería retornar false para una dirección IP con un número incorrecto de octetos', () => {
+    expect(correctIP([192, 168, 1])).toBe(false);
+  });
 });
