@@ -23,3 +23,20 @@ describe('correctIP', () => {
     expect(correctIP([192, 168, 1])).toBe(false);
   });
 });
+
+
+import { numToIp } from './index';
+
+describe('numToIp', () => {
+  it('debe convertir correctamente un número a una dirección IP válida', () => {
+    expect(numToIp(3232235777)).toBe('192.168.1.1');
+    expect(numToIp(2149583361)).toBe('128.32.10.1');
+    expect(numToIp(0)).toBe('0.0.0.0');
+  });
+
+  it('debe devolver null para números fuera del rango válido', () => {
+    expect(numToIp(-1)).toBeNull();
+    expect(numToIp(4294967296)).toBeNull();
+  });
+});
+
