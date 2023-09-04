@@ -1,14 +1,16 @@
 export const ipToNum = (ip: string): number | null => {
-  const octeto = ip.split('.').map(octetoStr => {
-    const octetoInt = parseInt(octetoStr, 10);
-    return octetoInt.toString(2).padStart(8, '0');
+  const arrayOctetos = ip.split('.').map(octetoStr => {
+    const octetoInt = parseInt(octetoStr, 10); 
+    return octetoInt.toString(2).padStart(8, '0'); 
   });
 
-  if (!correctIP(octeto.map(octetoStr => parseInt(octetoStr, 2)))) {
+  const arrayOctetosBinarios = arrayOctetos.map(octetoStr => parseInt(octetoStr, 2));
+
+  if (!correctIP(arrayOctetosBinarios)) {
     return null; // La dirección IP no es válida
   }
 
-  const binarioCompleto = octeto.join('');
+  const binarioCompleto = arrayOctetos.join('');
   const numeroDecimal = parseInt(binarioCompleto, 2);
 
   return numeroDecimal;
@@ -39,5 +41,3 @@ export const numToIp = (num: number): string | null => {
 
   return octetos.join('.');
 };
-
-console.log(numToIp(3232235777))
