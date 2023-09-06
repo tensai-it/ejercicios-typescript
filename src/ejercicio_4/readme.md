@@ -54,3 +54,27 @@ Además de las reglas mencionadas anteriormente, hemos introducido nuevas reglas
 
 Estas nuevas reglas agregan complejidad y realismo a las interacciones entre los animales en el sistema. Ahora, el sistema tiene en cuenta las probabilidades de esquivar ataques y las interacciones específicas entre aves, reptiles y mamíferos, lo que hace que las batallas entre animales sean más interesantes y variadas.
 
+## Interacciones de ejemplo
+```
+// Creación de instancias de animales
+const leon = new Leon("Simba", 5, 100, 10, 5); // (nombre, edad, energiaInicial, atkPower, defPower)
+const aguila = new Hornero("Pepita", 3, 80, 2, 2);
+const serpiente = new MambaNegra("Kaa", 10, 30, 3, 3);
+
+// Interacción entre animales
+leon.hacerSonido();
+aguila.hacerSonido();
+serpiente.hacerSonido();
+
+leon.atacar(aguila);
+aguila.atacar(serpiente);
+serpiente.atacar(leon);
+
+leon.recuperarEnergia(20); // El león recupera energía
+
+// Resultado final
+console.log("Estado Final:");
+console.log(leon);
+console.log(aguila);
+console.log(serpiente);
+```
