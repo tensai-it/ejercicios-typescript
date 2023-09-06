@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En este ejercicio, se presenta un sistema de pelease de animales utilizando TypeScript. 
+En este ejercicio, se presenta un sistema de peleas de animales utilizando TypeScript. 
 Deberás definir clases para diferentes tipos de animales, subclases para animales específicos, usar type guards para diferenciar entre ellos y emplear enums para representar las categorías de animales. Además, implementarás métodos para que los animales ataquen a otros, administren su energía y emitan sonidos.
 
 ## Instrucciones
