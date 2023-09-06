@@ -22,11 +22,11 @@ Deberás definir clases para diferentes tipos de animales, subclases para animal
 
 4. Implementa un type guard llamado `esMamifero(animal: Animal): boolean` que verifique si un objeto `Animal` es una instancia de la subclase `Mamifero`. Este type guard debería retornar `true` si es un mamífero y `false` en caso contrario. Realizar la misma validación para cada tipo de animal por ej: `esAve(animal: Animal)`, `esReptil(animal: Animal)`, etc.
 
-5. Crea subclases de tipos diferentes de animales, como por ejemplo `Leon` que extiende de `Mamifero` o `CobraNegra` que extiende de `Reptil` y siempre son venenosas. Estas subclases pueden tener más propiedades que sus clases padre, como por ejemplo en el caso de los mamíferos puede haberlos de 2 patas o 4 patas, Reptiles que se arrastran o caminan por poner un ejemplo.
+5. Crea subclases de tipos diferentes de animales, como por ejemplo `Leon` que extiende de `Mamifero` o `CobraNegra` que extiende de `Reptil` y siempre son venenosas. Estas subclases pueden tener más propiedades que sus clases padre, como por ejemplo en el caso de los mamíferos puede haberlos de 2 patas o 4 patas, Reptiles que se arrastran o caminan por poner un ejemplo. Por el momento sólo la subclase `Capibara` va a presentar comportamiento distinto al resto.
 
-6. Crea instancias de diferentes animales, como un león, un águila y una serpiente, y muestra su información utilizando la función `informacionAnimal()`. Luego, permite que interactúen entre sí llamando a los métodos `atacar()`, `recibirAtaque()` y `recuperarEnergia()`.
+6. Crea la clase `Capibara` que extiende de `Mamífero`. Estos animales al ser atacados no reciben daño y al atacar tampoco realizan daño, pero sí devuelven una parte del mismo, porque son animales del bien.
 
-7. Crea la clase `Capibara`, que al ser atacado no recibe daño y al atacar tampoco realiza ninguna acción, porque son animales del bien.
+7. Crea instancias de diferentes animales, como un león, un águila y una serpiente, y muestra su información utilizando la función `informacionAnimal()`. Luego, permite que interactúen entre sí llamando a los métodos `atacar()`, `recibirAtaque()` y `recuperarEnergia()`.
 
 ## Reglas Adicionales
 
