@@ -1,5 +1,9 @@
-import { Animal } from "./animal";
+import { Animal, TipoAnimal } from "./animal";
 export  class Ave extends Animal {
+    constructor(nombre: string, edad: number, energia: number, puntosAtaque: number, puntosDefensa: number) {
+        super(nombre, edad, energia, puntosAtaque, puntosDefensa);
+        this.tipo = TipoAnimal.Ave
+    }
 
     esquivarAtaque(): boolean {
         // Generar un número aleatorio entre 0 y 1. Si es menor que 0.4 (40%), el ataque esquivado.

@@ -13,8 +13,8 @@ describe('Pruebas para la Clase Mamifero', () => {
 
     beforeEach(() => {
 
-        leon = new Leon('Simba', 5, 2, 4, 9, 8, 'pelo');
-        serpiente = new MambaNegra('Kaa', 5, 2, 4, 9, 8,);
+        leon = new Leon('Simba', 5, 2, 4, 9, 'pelo');
+        serpiente = new MambaNegra('Kaa', 5, 2, 4, 9,);
 
 
     });

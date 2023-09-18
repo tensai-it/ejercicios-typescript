@@ -1,4 +1,4 @@
-import { Animal, TipoAnimal} from "./animal";
+import { Animal} from "./animal";
 import { Ave } from "./ave";
 import { Mamifero } from "./mamifero";
 import { Reptil } from "./reptil";
@@ -26,7 +26,7 @@ export class MambaNegra extends Reptil {
 
 export class Capibara extends Mamifero {
     constructor(nombre: string, edad: number, energia: number, puntosAtaque: number, puntosDefensa: number, tipoPiel: string) {
-        super(nombre, edad, TipoAnimal.Mamífero, energia, puntosAtaque, puntosDefensa, tipoPiel);
+        super(nombre, edad, energia, puntosAtaque, puntosDefensa, tipoPiel);
     }
 
     recibirAtaque(atacante: Animal) {

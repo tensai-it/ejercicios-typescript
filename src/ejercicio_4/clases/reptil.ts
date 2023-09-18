@@ -1,9 +1,14 @@
-import { Animal } from "./animal";
+import { Animal, TipoAnimal } from "./animal";
 export abstract class Reptil extends Animal {
+    constructor(nombre: string, edad: number, energia: number, puntosAtaque: number, puntosDefensa: number) {
+        super(nombre, edad, energia, puntosAtaque, puntosDefensa);
+        this.tipo = TipoAnimal.Reptil
+    }
+
     esquivarAtaque(): boolean {
         // Generar un número aleatorio entre 0 y 1. Si es menor que 0.4 (40%), el ataque esquivado.
         const probabilidadEsquivar = Math.random();
-        return probabilidadEsquivar < 0.4;
+        return probabilidadEsquivar < 0.25;
     }
 
     abstract esVenenosa(): boolean;
