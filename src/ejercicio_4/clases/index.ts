@@ -29,6 +29,10 @@ export class Capibara extends Mamifero {
         super(nombre, edad, energia, puntosAtaque, puntosDefensa, tipoPiel);
     }
 
+    hacerSonido(): string {
+        return `sniff sniff sniff`;
+    }
+
     recibirAtaque(atacante: Animal) {
 
         atacante.recibirAtaque(this)
@@ -38,11 +42,11 @@ export class Capibara extends Mamifero {
     }
 }
 
-
-
 export function informacionAnimal(animal: Animal) {
-    console.log(animal)
+    console.log(animal.toString());
 }
 
+const simba = new Leon('Simba', 12, 20, 3, 4, 'melena');
 
+informacionAnimal(simba);
 

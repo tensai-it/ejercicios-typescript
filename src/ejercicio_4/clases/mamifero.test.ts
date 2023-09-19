@@ -50,10 +50,11 @@ describe('Pruebas para la Clase Mamifero', () => {
     });
 
     it('debería mostrar información de un animal', () => {
+        const mensaje = 'hola soy: Simba, mi energia es: 2. ¡GRRRRRRAAAAWWWW!';
         const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
 
         informacionAnimal(leon);
-        expect(consoleSpy).toHaveBeenCalledWith(leon);
+        expect(consoleSpy).toHaveBeenCalledWith(mensaje);
         consoleSpy.mockRestore();
     });
 

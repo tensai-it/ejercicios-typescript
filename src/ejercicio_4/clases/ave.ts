@@ -5,6 +5,10 @@ export  class Ave extends Animal {
         this.tipo = TipoAnimal.Ave
     }
 
+    hacerSonido(): string {
+        return `pi pi pi`;
+    }
+
     esquivarAtaque(): boolean {
         // Generar un número aleatorio entre 0 y 1. Si es menor que 0.4 (40%), el ataque esquivado.
         const probabilidadEsquivar = Math.random();

@@ -7,14 +7,18 @@ export abstract class Animal {
     puntosDefensa: number;
     tipo: TipoAnimal | undefined; 
 
-
-
     constructor(nombre: string, edad: number, energia: number, puntosAtaque: number, puntosDefensa: number) {
         this.nombre = nombre;
         this.edad = edad;
         this.energia = energia;
         this.puntosAtaque = puntosAtaque;
         this.puntosDefensa = puntosDefensa;
+    }
+
+    abstract hacerSonido():string;
+
+    toString(): string {
+        return `hola soy: ${this.nombre}, mi energia es: ${this.energia}. ${this.hacerSonido()}`;
     }
 
     mover(distancia: number) {
