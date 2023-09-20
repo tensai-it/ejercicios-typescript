@@ -1,10 +1,11 @@
-//import { TipoAnimal } from './clases/animal';
-import { Leon, MambaNegra, informacionAnimal } from './index';
+import { Leon } from './leon';
+import {  MambaNegra } from './mambaNegra';
+import { informacionAnimal } from './index';
 import { esAve } from './ave';
 import { esMamifero } from './mamifero';
 import { esReptil } from './reptil';
 
-describe('Pruebas para la Clase Mamifero', () => {
+describe('Pruebas para la Clase Leon', () => {
 
     let serpiente: MambaNegra;
     let leon: Leon

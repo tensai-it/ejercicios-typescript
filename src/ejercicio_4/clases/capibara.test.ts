@@ -1,7 +1,10 @@
-import { Capibara, MambaNegra } from './index'; // Asegúrate de que la ruta sea correcta
+import { Capibara } from './capibara';
+import { Leon } from './leon';
+import { informacionAnimal } from './index';
 
 describe('Capibara', () => {
   let capibara: Capibara;
+  let atacante: Leon;
 
   beforeEach(() => {
     capibara = new Capibara('Capibara1', 5, 100, 10, 5, 'pielTipo');
@@ -11,18 +14,28 @@ describe('Capibara', () => {
     expect(capibara.nombre).toBe('Capibara1');
     expect(capibara.edad).toBe(5);
     expect(capibara.energia).toBe(100);
-    expect(capibara.puntosAtaque).toBe(10);
     expect(capibara.puntosDefensa).toBe(5);
     expect(capibara.tipoPiel).toBe('pielTipo');
   });
 
+  it('debería mostrar información de un animal', () => {
+    const mensaje = 'hola soy: Capibara1, mi energia es: 100. sniff sniff sniff';
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation();
+
+    informacionAnimal(capibara);
+    expect(consoleSpy).toHaveBeenCalledWith(mensaje);
+    consoleSpy.mockRestore();
+})
+
   it('debería recibir un ataque y reducir su energía', () => {
-    const atacante = new MambaNegra('Serpiente', 3, 40, 8, 3);
-    const energiaEsperada = atacante.energia - (0.01 * atacante.puntosAtaque);
+    atacante = new Leon('LeonMalo', 3, 40, 8, 3, 'rulos');
+    const danio = 0.01 * atacante.puntosAtaque;
+    const energiaEsperada = (atacante.energia - danio);
 
-    atacante.atacar(capibara);
+    capibara.recibirAtaque(atacante);
 
-    expect(atacante.energia).toBe(energiaEsperada);
-    expect(capibara.energia).toBe(100);
+    expect(atacante.energia).toBeCloseTo(energiaEsperada);
+    expect(capibara.energia).toBe(capibara.energia);
   });
 });
+

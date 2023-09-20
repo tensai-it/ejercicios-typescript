@@ -1,5 +1,5 @@
 import { Animal, TipoAnimal } from "./animal";
-export  class Ave extends Animal {
+export abstract class Ave extends Animal {
     constructor(nombre: string, edad: number, energia: number, puntosAtaque: number, puntosDefensa: number) {
         super(nombre, edad, energia, puntosAtaque, puntosDefensa);
         this.tipo = TipoAnimal.Ave
@@ -29,3 +29,4 @@ export  class Ave extends Animal {
 export function esAve(animal: Animal): animal is Ave {
     return animal instanceof Ave;
 }
+
