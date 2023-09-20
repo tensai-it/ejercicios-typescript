@@ -11,7 +11,7 @@ export class Capibara extends Mamifero {
 
     recibirAtaque(atacante: Animal) {
 
-        super.recibirAtaque(this)
+        
         const danio = atacante.puntosAtaque * 0.01;
         
         atacante.energia -= danio;

@@ -5,9 +5,10 @@ import { informacionAnimal } from './index';
 describe('Capibara', () => {
   let capibara: Capibara;
   let atacante: Leon;
+  let energiaInicial = 100;
 
   beforeEach(() => {
-    capibara = new Capibara('Capibara1', 5, 100, 10, 5, 'pielTipo');
+    capibara = new Capibara('Capibara1', 5, energiaInicial, 10, 5, 'pielTipo');
   });
 
   it('debería instanciar un Capibara correctamente', () => {
@@ -35,7 +36,7 @@ describe('Capibara', () => {
     capibara.recibirAtaque(atacante);
 
     expect(atacante.energia).toBeCloseTo(energiaEsperada);
-    expect(capibara.energia).toBe(capibara.energia);
+    expect(capibara.energia).toBe(energiaInicial);
   });
 });
 
